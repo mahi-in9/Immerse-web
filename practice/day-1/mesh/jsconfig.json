@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "types": ["vite/client", "@react-three/fiber", "three"]
+  },
+  "include": ["src"]
+}
