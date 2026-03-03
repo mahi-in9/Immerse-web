@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import * as THREE from "three";
 import { Canvas, useThree } from "@react-three/fiber";
 import {
@@ -7,7 +7,6 @@ import {
   useTexture,
   useAnimations,
 } from "@react-three/drei";
-import { useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -19,7 +18,6 @@ function Dog() {
   const model = useGLTF("/models/dog.drc.glb");
 
   useThree(({ camera, scene, gl }) => {
-    // console.log(camera.position);
     camera.position.z = 0.55;
     gl.toneMapping = THREE.ReinhardToneMapping;
     gl.outputColorSpace = THREE.SRGBColorSpace;
@@ -35,7 +33,7 @@ function Dog() {
     "/dog_normals.jpg",
     "/matcap/mat-2.png",
   ]).map((texture) => {
-    texture.flipY = true;
+    texture.flipY = false;
     texture.colorSpace = THREE.SRGBColorSpace;
     return texture;
   });
