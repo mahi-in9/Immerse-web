@@ -2,13 +2,22 @@ import { useState } from "react";
 import "./App.css";
 import { Canvas } from "@react-three/fiber";
 import Dog from "./components/Dog";
-import { cover } from "three/src/extras/TextureUtils.js";
 
 function App() {
   return (
     <>
       <main>
+        <div className="images">
+          <img id="tomorrowland" src="/tommorowland.png" alt="" />
+          <img id="navy-pier" src="/navy-pier.png" alt="" />
+          <img id="msi-chicago" src="/msi-chicago.png" alt="" />
+          <img id="phone" src="/phone.png" alt="" />
+          <img id="kikk" src="/kikk.png" alt="" />
+          <img id="kennedy" src="/kennedy.png" alt="" />
+          <img id="opera" src="/opera.png" alt="" />
+        </div>
         <Canvas
+          id="canvas-elem"
           style={{
             height: "100vh",
             width: "100vw",
@@ -16,9 +25,6 @@ function App() {
             top: 0,
             left: 0,
             zIndex: 1,
-            backgroundImage: "url(/background-l.png)",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
           }}
         >
           <Dog />
